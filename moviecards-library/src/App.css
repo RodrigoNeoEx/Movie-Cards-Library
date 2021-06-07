@@ -1,38 +1,162 @@
-.App {
+@import url('http://fonts.cdnfonts.com/css/circles-new');
+
+body {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-image: url(https://cdn.hipwallpaper.com/i/66/18/anS1Kk.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header span {
+  font-family: 'Circles_New';
+  color: #6c757d;
+  font-size: 40px;
+  transform: rotate(360deg);
+}
+
+.movie-card-header {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  color: #6c757d;
+  text-shadow: 0 0 50px green,
+  0 0 100px green,
+  0 0 150px green,
+  0 0 200px green,
+  0 0 250px green,
+  0 0 300px green;
+  animation: animate 0.5s linear infinite;
+  z-index: 50;
+}
+
+@keyframes animate {
+  0% {filter: hue-rotate(0deg);}
+  100%{filter: hue-rotate(360deg);}
+}
+
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0px;
+  align-items: flex-end;
+  height: 100vh;
+  margin-left: 5px;
+
+}
+
+.movie-card {
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px #00000078, 2px -2px 1px #00000078, 3px 2px 2px #ffffff42, 3px -3px 6px 4px #ffffff42;
+  display: flex;
+  height: 200px;
+  margin: 5px;
+  overflow: hidden;
+  width: 250px;
+  align-items: inherit;
+  transition: 1s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-20px) ;
+  z-index: 10;
+  box-shadow: 1px 1px 1px #e2e2e278, 2px -2px 1px #fffafa78, 3px 2px 2px #ffffff42, 3px -3px 6px 4px #ffffff42;
+  transition: 1s;
+  cursor: pointer;
+}
+
+
+.movie-card-image {
+  width: 100%;
+  display: flex;
+}
+
+.movie-card-body {
+  flex: 1 1 auto;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 3px auto;
+  display: flex;
+}
+
+.movie-card-subtitle {
+  color: #6c757d;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0px 0px 6px -35px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-card-storyline {
+  font-size: 14px;
+  text-align: justify;
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardTitle {
+  height: 30px;
   display: flex;
-  flex-direction: column;
+  align-items: inherit;
+  /* background-color: aliceblue; */
+  justify-content: space-evenly;
+  color: rgba(245, 245, 245, 0.63);
+}
+
+.movie-card-rating {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1px 0px 2px 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.rating {
+  background-color: #14171b6b;
+  border-radius: 25px;
+  color: rgba(245, 245, 245, 0.63);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 3px 8px;
+  width: 20px;
+  text-align: center;
+  height: fit-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.videoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  grid-template-rows: 0em 30em 1em;
+  left: 4px;
+}
+
+.videos {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  height: 98%;
+  border-radius: 25px;
+  width: fit-content;
 }
