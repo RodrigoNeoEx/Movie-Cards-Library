@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
+import Header from './Components/Header';
 import movies from './data';
-import MovieList from './components/MovieList';
-import Videos from './components/videos';
+import MovieList from './Components/MovieList';
+import Videos from './Components/videos';
 function App() {
   return (
     <div className="App">
